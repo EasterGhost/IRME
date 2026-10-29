@@ -1,0 +1,29 @@
+% !TeX root = ../main.tex
+\begin{frame}{02 研究现状——拓扑优化逆向设计方法}
+  \begin{SlideCanvas}
+    \MiddleTimeAxis
+    \MiddleTimeNode{140}{2015}{up}
+    \MiddleTimeNode{310}{2020}{down}
+    \MiddleTimeNode{480}{2021}{up}
+    \MiddleTimeNode{650}{2025}{down}
+    \MiddleTimeNode{820}{2025}{up}
+    \PointAt{55}{85}{270}{Clausen等：泊松比编程}
+    \CenteredPicAt{190}{168}{245}{94}{assets/clausen2015_fig1.png}
+    \DetailAt{55}{220}{270}{有限变形下优化单胞拓扑，匹配预设泊松比。}
+    \PointAt{345}{85}{270}{Xue等：血流目标优化}
+    \CenteredPicAt{480}{168}{245}{94}{assets/xue2021_domains.png}
+    \DetailAt{345}{220}{270}{负泊松比、刚度和流动代理量共同优化。}
+    \PointAt{635}{85}{270}{Xu等：非线性响应}
+    \CenteredPicAt{770}{168}{245}{94}{assets/xu2025_fig1.jpg}
+    \DetailAt{635}{220}{270}{课题组引入切线刚度约束，实现目标非线性响应编程。}
+    \PointAt{55}{333}{400}{Xue等：多尺度拓扑优化}
+    \CenteredPicAt{255}{403}{380}{82}{assets/xue2020_optimization.pdf}
+    \DetailAt{55}{450}{400}{宏微观协同设计，优化负泊松比和刚度。}
+    \PointAt{505}{333}{400}{Ferro等：制造约束}
+    \CenteredPicAt{595}{423}{180}{105}{assets/ferro2025_fig4.jpg}
+    \DetailAt{700}{376}{205}{在均匀化性能约束下设计单胞，并限制最小杆宽以支持制造。}
+    \Sources{\RefClausen，图1；\RefXueA，图11；\RefXueB，图4。\\\RefFerro，图4；\RefXuPrior，图1。年份按卷期，间距示意；Clausen和Xu为材料／结构方法。}
+  \end{SlideCanvas}
+  \BICConclusionBand{拓扑优化由\BICBandEmph{预设性能反求材料分布}，逐步引入器件需求}
+  \note{本页五篇工作每篇一图，讲述详略由口头控制。Clausen2015以有限变形区间内的目标泊松比设计单胞材料分布，原图比较线性与几何非线性设计；这是材料架构方法。Xue2020通过均匀化联系宏观布局与微结构，共同优化负泊松比和刚度，图11为数值设计结果；其打印原型放大15倍。Xue2021在力学目标外加入修正渗透率作为流动代理，再开展器件CFD和WSS评价，代理量不等于血栓结局。Ferro2025将SIMP、逆均匀化、各向异性自适应网格及最小长度尺度约束结合，围绕既有支架性能进行复制或改进；图4含优化单胞、网格和周期阵列，虚拟原型随后通过压握仿真评价，不能称已制造验证。设计阶段采用线弹性均匀化，压握使用NiTi材料模型，二者范围应区分。Xu2025是本课题组前期工作，以目标非线性响应拟合和切线刚度约束提高编程精度，结合改进广义位移控制与应变能插值；图1为方法示意，不是新实验数据，也不是支架径向承载结果。本页由几何响应、器件性能和非线性载荷响应的不同方法引出下一部分课题组联合编程成果。Carbonaro的性能表征、Gharleghi及Zhang的几何参数优化保留补充引用，不混称拓扑优化。Ferro与Xu的卷期均为2025年，仅按卷期排序。}
+\end{frame}

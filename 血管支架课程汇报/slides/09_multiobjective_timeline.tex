@@ -1,0 +1,21 @@
+% !TeX root = ../main.tex
+\begin{frame}{多目标优化}
+  \begin{SlideCanvas}
+    \LiteratureTimeAxis
+    \LiteratureTimeNode{190}{2021}
+    \LiteratureTimeNode{480}{2021}
+    \LiteratureTimeNode{770}{2026}
+    \PointAt{55}{153}{270}{Xue等}
+    \PointAt{345}{153}{270}{Gharleghi等}
+    \PointAt{635}{153}{270}{Zhang等}
+    \CenteredPicAt{190}{275}{260}{180}{assets/xue2021_wss.pdf}
+    \CenteredPicAt{480}{275}{260}{180}{assets/gharleghi2021_fig1.jpg}
+    \CenteredPicAt{770}{275}{260}{180}{assets/zhang2026_fig17.jpg}
+    \DetailAt{55}{383}{270}{负泊松比、刚度与流动代理量共同优化，并用CFD评价壁面剪切应力（WSS）。}
+    \DetailAt{345}{383}{270}{比较7类几何变量与50个设计，权衡径向刚度与不利壁面剪切应力区域面积。}
+    \DetailAt{635}{383}{270}{用神经网络与差分进化反设计花瓣手性构型，结合球囊—支架—血管模型评价部署。}
+    \Sources{\RefXueB，图12；\RefGharleghi，图1；\RefZhang，图17。\\年份按卷期，节点间距示意；Zhang在线发表于2025年。后两项依据期刊摘要、预览及原图。}
+  \end{SlideCanvas}
+  \BICConclusionBand{力学与血流目标相互影响，\BICBandEmph{单项最优与整体折中}可对应不同构型}
+  \note{每个年份节点引出一篇论文及其原图。Xue图12比较支架覆盖和未覆盖表面的WSS分布，其修正渗透率属于流动代理量，不能等同于WSS或血栓率。Gharleghi图1展示几何变量，包括杆截面、尺寸、角度、单胞排列与高度、连接形式与排列；其优化对象为低TAWSS面积、高WSS面积及径向刚度，50个设计中的单项最优与整体折中不同。TAWSS为时间平均壁面剪切应力。Zhang图17展示花瓣手性支架及球囊、血管耦合模型，采用参数化逆向设计，不称为密度法拓扑优化。在线2025年、卷期2026年；本时间轴统一按卷期。三篇均不直接提供临床结局证据。}
+\end{frame}

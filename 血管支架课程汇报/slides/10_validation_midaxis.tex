@@ -1,0 +1,25 @@
+% !TeX root = ../main.tex
+\begin{frame}{02 研究现状——器件验证}
+  \begin{SlideCanvas}
+    \MiddleTimeAxis
+    \MiddleTimeNode{155}{2021}{up}
+    \MiddleTimeNode{370}{2024}{down}
+    \MiddleTimeNode{585}{2026}{up}
+    \MiddleTimeNode{800}{2026}{down}
+    \PointAt{55}{85}{400}{Wang等：PCL原型}
+    \CenteredPicAt{145}{180}{180}{112}{assets/wang2021_length.pdf}
+    \DetailAt{250}{126}{205}{打印零泊松比支架，以径向扩张试验检验轴向长度稳定性。}
+    \PointAt{505}{85}{400}{Gupta等：金属原型}
+    \CenteredPicAt{595}{180}{180}{112}{assets/gupta2026_fig7.jpg}
+    \DetailAt{700}{126}{205}{激光切割与抛光制备原型，测试径向承载及轴向长度变化。}
+    \PointAt{55}{333}{400}{Vellaparambil等：弯曲实验}
+    \CenteredPicAt{145}{423}{180}{105}{assets/vellaparambil2024_bending.png}
+    \DetailAt{250}{376}{205}{打印钛合金原型，将实测杆厚反馈模型，以三点弯曲实验核对仿真。}
+    \PointAt{505}{333}{400}{Yasmin等：NiTi原型}
+    \CenteredPicAt{595}{423}{180}{105}{assets/zero2026_geometry.png}
+    \DetailAt{700}{376}{205}{结合压握／释放建模和初步打印，评价特定工况中的长度变化。}
+    \Sources{\RefWang，图11(b)；\RefVella，图3。\\\RefGupta，图7；\RefYasmin，图4。年份按卷期，间距示意；不同材料与工况分别解释。}
+  \end{SlideCanvas}
+  \BICConclusionBand{器件验证需要同时检验\BICBandEmph{长度稳定性、径向承载和制造可行性}}
+  \note{本页四篇工作覆盖不同材料、制造方法和验证工况，不能作统一性能排名。Wang2021保留图11(b)完整长度柱图，观察原始、最大扩张与回弹状态，不重绘纵轴。Vellaparambil2024用DMLS制造6类Ti-6Al-4V原型，将实测杆厚反馈有限元，再用三点弯曲核对模型；图3完整保留实验与计算装置，其82mm长度、16mm直径原型的弯曲验证不等于冠脉部署或临床验证。Gupta2026图7为飞秒激光切割装置，制造与性能表述另由原文摘要支持；径向强度3.22对1.26N/mm、短缩率-9.44\%对+2.49\%属于同研究比较。Yasmin2026图4是箭头单胞、阵列和圆管；其|FS|不超过0.12\%只适用于t=0.50mm、l=4.50mm、15--25度构型的50\%压握终态，不代表释放全过程。NiTi打印件相变温度、端部约束和进一步径向验证的限制在展望页讨论。本轮只补充文献及图件，没有新增实验或计算结果。}
+\end{frame}

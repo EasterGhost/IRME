@@ -1,0 +1,9 @@
+tmp/
+.work/
+*.pdf
+.build/
+output/
+previews/
+*.txt
+*.html
+*..aux

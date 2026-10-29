@@ -1,0 +1,247 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeMPointBIC}[2026/09/01 M-point BIC presentation theme]
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{xparse}
+\RequirePackage{etoolbox}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+
+\mode<presentation>
+\usefonttheme{professionalfonts}
+
+% Match the source PowerPoint widescreen canvas exactly. Rendering this page
+% at 144 dpi produces 1920 x 1080 pixels without raster rescaling.
+\geometry{paperwidth=13.333333in,paperheight=7.5in}
+
+% Colors read from D:/SharedResources/模板/模板1.potx.
+\definecolor{BICNavy}{HTML}{10345A}
+\definecolor{BICDeepNavy}{HTML}{0B3041}
+\definecolor{BICMidNavy}{HTML}{17375E}
+\definecolor{BICThemeDark}{HTML}{0E2841}
+\definecolor{BICAccentBlue}{HTML}{156082}
+\definecolor{BICLightGray}{HTML}{E8E8E8}
+\definecolor{BICPageGray}{HTML}{C2CBCF}
+\definecolor{BICDeepRed}{HTML}{C00000}
+\definecolor{BICBrightYellow}{HTML}{FFFF00}
+\definecolor{BICAccentOrange}{HTML}{E97132}
+\definecolor{BICAccentGreen}{HTML}{196B24}
+\definecolor{BICAccentCyan}{HTML}{0F9ED5}
+\definecolor{BICAccentMagenta}{HTML}{A02B93}
+\definecolor{BICAccentLeaf}{HTML}{4EA72E}
+
+% The deck is intentionally strict: no silent CJK font substitution.
+\IfFontExistsTF{Microsoft YaHei}{
+  \setsansfont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+  \setmainfont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+  \setmonofont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+  \setCJKsansfont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+  \setCJKmainfont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+  \setCJKmonofont{Microsoft YaHei}[
+    BoldFont={Microsoft YaHei Bold}
+  ]
+}{
+  \PackageError{beamerthemeMPointBIC}
+    {Microsoft YaHei is not installed}
+    {Install Microsoft YaHei and Microsoft YaHei Bold, then compile with XeLaTeX.}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\seriesdefault}{\bfdefault}
+% Keep both Chinese--Chinese and Chinese--Latin spacing fixed.  xeCJK's
+% default CJK glue is stretchable and can visibly enlarge character spacing
+% inside centered or fixed-width text boxes, which does not match the source
+% PowerPoint typography.
+\xeCJKsetup{
+  CJKglue={\hskip 0pt},
+  CJKecglue={\hskip 0pt}
+}
+\AtBeginDocument{\sffamily\bfseries\boldmath}
+\AtBeginEnvironment{frame}{\sffamily\bfseries\boldmath\raggedright}
+
+% Reuse these semantic font roles across pages; do not resize individual
+% text boxes to fit. Sizes and leading are integer PowerPoint-style points.
+\setbeamerfont{normal text}{family=\sffamily,series=\bfseries,size=\fontsize{20}{28}\selectfont}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\fontsize{32}{38}\selectfont}
+\setbeamerfont{title}{family=\sffamily,series=\bfseries,size=\fontsize{32}{42}\selectfont}
+\setbeamerfont{section in toc}{parent=frametitle,size=\fontsize{32}{80}\selectfont}
+\setbeamerfont{BIC point}{parent=normal text,size=\fontsize{22}{28}\selectfont}
+\setbeamerfont{BIC group heading}{parent=BIC point,size=\fontsize{26}{32}\selectfont}
+\setbeamerfont{BIC detail}{parent=normal text,size=\fontsize{18}{24}\selectfont}
+\setbeamerfont{BIC note}{parent=normal text,size=\fontsize{14}{22}\selectfont}
+\setbeamerfont{caption}{parent=normal text,size=\fontsize{16}{20}\selectfont}
+\setbeamerfont{BIC annotation}{parent=normal text,size=\fontsize{14}{18}\selectfont}
+\setbeamerfont{BIC source}{parent=normal text,size=\fontsize{9}{12}\selectfont}
+\setbeamerfont{BIC step number}{parent=normal text,size=\fontsize{28}{32}\selectfont}
+\setbeamerfont{BIC conclusion}{parent=normal text,size=\fontsize{22}{26}\selectfont}
+\setbeamerfont{BIC metadata}{parent=normal text,size=\fontsize{22}{34}\selectfont}
+\setbeamerfont{author}{parent=BIC metadata}
+\setbeamerfont{date}{parent=BIC metadata}
+\setbeamerfont{page number in head/foot}{family=\sffamily,series=\bfseries,size=\fontsize{14}{17}\selectfont}
+\setbeamerfont{block title}{parent=BIC point}
+\setbeamerfont{block body}{parent=normal text}
+
+\setbeamercolor{normal text}{fg=BICNavy,bg=white}
+\setbeamercolor{frametitle}{fg=BICNavy,bg=white}
+\setbeamercolor{title}{fg=BICDeepRed,bg=white}
+\setbeamercolor{structure}{fg=BICNavy}
+\setbeamercolor{alerted text}{fg=BICDeepRed}
+\setbeamercolor{block title}{fg=BICNavy,bg=white}
+\setbeamercolor{block body}{fg=BICNavy,bg=white}
+\setbeamercolor{caption name}{fg=BICNavy}
+
+\setbeamersize{text margin left=19.05mm,text margin right=19.05mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{itemize item}{\raisebox{0.18ex}{\rule{0.46em}{0.46em}}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.20ex}{\rule{0.34em}{0.34em}}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{blocks}[default]
+
+\newcommand{\BICLogoPath}{assets/hust_logo.jpeg}
+\newcommand{\BICSetLogo}[1]{\renewcommand{\BICLogoPath}{#1}}
+
+% Hide the page-number display locally without changing frame numbering.
+\newif\ifBICShowPageNumber
+\BICShowPageNumbertrue
+
+% Header geometry follows the source template in normalized coordinates.
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=.0977\paperheight,dp=0mm]{normal text}%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[
+        anchor=west,
+        inner sep=0pt,
+        text=BICNavy
+      ] at ([xshift=.0275\paperwidth,yshift=-.0535\paperheight]current page.north west)
+      {\usebeamerfont{frametitle}\strut
+       \ifcsname insertframetitle\endcsname\insertframetitle\fi};
+
+      \IfFileExists{\BICLogoPath}{%
+        % Leave room for two-digit page numbers without moving the approved
+        % page-number anchor or changing any of the original single-digit pages.
+        \def\BICLogoClearance{0bp}%
+        \ifnum\value{framenumber}>9\relax\def\BICLogoClearance{8bp}\fi
+        \node[anchor=north east,inner sep=0pt]
+        at ([xshift={\dimexpr-.0176\paperwidth-\BICLogoClearance\relax},yshift=-.0026\paperheight]current page.north east)
+        {\includegraphics[width=.0690\paperwidth,height=.0933\paperheight]{\BICLogoPath}};
+      }{}
+
+      \ifBICShowPageNumber
+        \ifnum\value{framenumber}>1\relax
+          % One PDF point is two preview pixels at 144 dpi.
+          \node[anchor=east,inner sep=0pt,text=BICNavy]
+          at ([xshift=-.0070\paperwidth,yshift={\dimexpr-.0700\paperheight-1bp\relax}]current page.north east)
+          {\usebeamerfont{page number in head/foot}\insertframenumber};
+        \fi
+      \fi
+
+      \draw[BICDeepNavy,line width=.00833\paperheight]
+      ([yshift=-.0977\paperheight]current page.north west) --
+      ([yshift=-.0977\paperheight]current page.north east);
+    \end{tikzpicture}%
+  \end{beamercolorbox}%
+}
+
+% The title is already drawn in the headline; no duplicate frame-title box.
+\setbeamertemplate{frametitle}{}
+
+% Emphasis semantics: deep red on white; bright yellow only on navy.
+\newcommand{\BICEmph}[1]{\textcolor{BICDeepRed}{#1}}
+\newcommand{\BICBandEmph}[1]{\textcolor{BICBrightYellow}{#1}}
+
+\newcommand{\BICConclusionBand}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[BICNavy]
+      (current page.south west) rectangle
+      ([yshift=.0600\paperheight]current page.south east);
+    \node[
+      anchor=center,
+      inner sep=0pt,
+      text width=.920\paperwidth,
+      align=center,
+      text=white,
+      font=\usebeamerfont{BIC conclusion}
+    ] at ([yshift=.0300\paperheight]current page.south) {#1};
+  \end{tikzpicture}%
+}
+
+% Usage inside a normal frame:
+% \BICUpperContent{Upper descriptive content.}
+% \BICConclusionBand{Conclusion with \BICBandEmph{highlight}.}
+\NewDocumentCommand{\BICUpperContent}{+m}{%
+  \begin{minipage}[t][.735\paperheight][t]{\linewidth}%
+    #1%
+  \end{minipage}%
+}
+
+\newcommand{\BICReporterValue}{}
+\newcommand{\BICGradeValue}{}
+\newcommand{\BICAdvisorValue}{}
+\newcommand{\BICDateValue}{}
+\newcommand{\BICSetMetadata}[4]{%
+  \renewcommand{\BICReporterValue}{#1}%
+  \renewcommand{\BICGradeValue}{#2}%
+  \renewcommand{\BICAdvisorValue}{#3}%
+  \renewcommand{\BICDateValue}{#4}%
+}
+
+\newcommand{\BICMakeTitle}{%
+  \begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[
+        anchor=center,
+        inner sep=0pt,
+        align=center,
+        font=\usebeamerfont{title},
+        text=BICDeepRed
+      ] at ([yshift=-.4042\paperheight]current page.north)
+      {\inserttitle};
+
+      \node[
+        anchor=north west,
+        inner sep=0pt,
+        text width=.340\paperwidth,
+        align=left,
+        text=BICNavy,
+        font=\usebeamerfont{BIC metadata}
+      ] at ([xshift=.366\paperwidth,yshift=-.6453\paperheight]current page.north west)
+      {汇报人：\BICReporterValue\\
+       年级：\BICGradeValue\\
+       导师：\BICAdvisorValue\\
+       时间：\BICDateValue};
+    \end{tikzpicture}
+  \end{frame}%
+}
+
+\newcommand{\BICClosingFrame}[1][请各位老师同学批评指正！]{%
+  \begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center,text=BICNavy,font=\fontsize{40}{49}\selectfont\bfseries]
+      at ([yshift=-.405\paperheight]current page.north) {谢谢！};
+      \node[
+        anchor=center,
+        text=BICNavy,
+        font=\fontsize{40}{53}\selectfont\bfseries
+      ] at ([yshift=-.585\paperheight]current page.north) {#1};
+    \end{tikzpicture}
+  \end{frame}%
+}
+
+\mode<all>

@@ -1,0 +1,121 @@
+% All positions follow the supplied 960 x 540 PDF-point reference canvas.
+% The supplied theme, logo, font roles, colors and header are preserved.
+\newenvironment{SlideCanvas}
+  {\begin{tikzpicture}[remember picture,overlay]
+   \begin{scope}[shift={(current page.north west)},x=1pt,y=-1pt]}
+  {\end{scope}\end{tikzpicture}}
+
+\newcommand{\TextAt}[6]{%
+  \node[anchor=north west,inner sep=0pt,text width=#3pt,align=left,
+    text=#5,font=\usebeamerfont{#4}] at (#1,#2) {#6};}
+\newcommand{\BodyAt}[4]{\TextAt{#1}{#2}{#3}{normal text}{BICNavy}{#4}}
+\newcommand{\PointAt}[4]{\TextAt{#1}{#2}{#3}{BIC point}{BICNavy}{#4}}
+\newcommand{\GroupHeadingAt}[4]{\TextAt{#1}{#2}{#3}{BIC group heading}{BICNavy}{#4}}
+\newcommand{\BulletPointAt}[4]{%
+  \fill[BICNavy] ({#1-15},{#2+11}) circle[radius=2.8pt];
+  \PointAt{#1}{#2}{#3}{#4}}
+
+\newcommand{\DetailAt}[4]{\TextAt{#1}{#2}{#3}{BIC detail}{BICNavy}{#4}}
+\newcommand{\CaptionAt}[4]{\TextAt{#1}{#2}{#3}{caption}{BICNavy}{#4}}
+\newcommand{\NoteAt}[4]{\TextAt{#1}{#2}{#3}{BIC note}{BICNavy}{#4}}
+\newcommand{\RedAt}[4]{\TextAt{#1}{#2}{#3}{BIC point}{BICDeepRed}{#4}}
+\newcommand{\PicAt}[5]{%
+  \node[anchor=north west,inner sep=0pt] at (#1,#2)
+    {\includegraphics[width=#3pt,height=#4pt,keepaspectratio]{#5}};}
+\newcommand{\Sources}[1]{\TextAt{55}{482}{850}{BIC source}{BICNavy}{#1}}
+\newcommand{\RuleAt}[1]{\draw[BICPageGray,line width=.75pt] (55,#1)--(905,#1);}
+\newcommand{\MainRuleAt}[1]{\draw[BICNavy,line width=1.1pt] (55,#1)--(905,#1);}
+
+% Literature timelines use ordinal year nodes; spacing does not encode elapsed time.
+\newcommand{\LiteratureTimeAxis}{%
+  \draw[BICNavy,line width=2pt,-{Latex[length=10pt,width=8pt]}]
+    (55,116)--(905,116);}
+\newcommand{\LiteratureTimeNode}[2]{%
+  \draw[BICPageGray,line width=1.2pt] (#1,116)--(#1,144);
+  \fill[BICDeepRed] (#1,116) circle[radius=3.2pt];
+  \node[anchor=south,inner sep=0pt,text=BICDeepRed,
+    font=\usebeamerfont{BIC point}] at (#1,103) {#2};}
+\newcommand{\CenteredPicAt}[5]{%
+  \node[anchor=center,inner sep=0pt] at (#1,#2)
+    {\includegraphics[width=#3pt,height=#4pt,keepaspectratio]{#5}};}
+
+\newcommand{\MiddleTimeAxis}{%
+  \draw[BICNavy,line width=2pt,-{Latex[length=10pt,width=8pt]}]
+    (55,282)--(905,282);}
+\newcommand{\MiddleTimeNode}[3]{%
+  \ifstrequal{#3}{up}{%
+    \draw[BICPageGray,line width=1.2pt] (#1,282)--(#1,267);
+  }{%
+    \draw[BICPageGray,line width=1.2pt] (#1,282)--(#1,322);
+  }%
+  \fill[BICDeepRed] (#1,282) circle[radius=3.2pt];
+  \node[anchor=north,inner xsep=3pt,inner ysep=2pt,fill=white,
+    text=BICDeepRed,font=\usebeamerfont{BIC point}]
+    at (#1,292) {#2};}
+
+\newcommand{\RefSCAI}{\href{https://doi.org/10.1016/j.jscai.2023.100971}
+  {Klein等，SCAI专家共识，JSCAI 2 (2023) 100971}}
+\newcommand{\RefRuan}{\href{https://doi.org/10.1016/j.mechmat.2020.103509}
+  {Ruan等，Mechanics of Materials 148 (2020) 103509}}
+\newcommand{\RefXueA}{\href{https://doi.org/10.3389/fbioe.2020.00736}
+  {Xue等，Front. Bioeng. Biotechnol. 8 (2020) 736}}
+\newcommand{\RefXueB}{\href{https://doi.org/10.3389/fbioe.2021.728914}
+  {Xue等，Front. Bioeng. Biotechnol. 9 (2021) 728914}}
+\newcommand{\RefHas}{\href{https://doi.org/10.1016/j.actbio.2025.06.043}
+  {Hasanzadeh等，Acta Biomaterialia 202 (2025) 641--659}}
+\newcommand{\RefGupta}{\href{https://doi.org/10.1016/j.tws.2025.114309}
+  {Gupta等，Thin-Walled Structures 219 (2026) 114309}}
+\newcommand{\RefGroup}{\href{https://doi.org/10.1016/j.tws.2026.114956}
+  {Xu等，Thin-Walled Structures 227 (2026) 114956}}
+\newcommand{\RefBorghi}{\href{https://doi.org/10.1007/s11665-014-0913-z}
+  {Borghi等，J. Mater. Eng. Perform. 23 (2014) 2599--2605}}
+
+\newcommand{\RefAmin}{\href{https://doi.org/10.5301/jabfm.5000213}
+  {Amin等，J. Appl. Biomater. Funct. Mater. 13 (2015) e127--e135}}
+\newcommand{\RefWu}{\href{https://doi.org/10.1016/j.compstruct.2017.11.048}
+  {Wu等，Composite Structures 185 (2018) 381--392}}
+\newcommand{\RefClausen}{\href{https://doi.org/10.1002/adma.201502485}
+  {Clausen等，Advanced Materials 27 (2015) 5523--5527}}
+\newcommand{\RefCarbonaro}{\href{https://doi.org/10.1016/j.cmpb.2024.108467}
+  {Carbonaro等，CMPB 257 (2024) 108467}}
+\newcommand{\RefGharleghi}{\href{https://doi.org/10.1016/j.jbiomech.2021.110575}
+  {Gharleghi等，J. Biomech. 125 (2021) 110575}}
+\newcommand{\RefZhang}{\href{https://doi.org/10.1016/j.bioadv.2025.214453}
+  {Zhang等，Biomaterials Advances 178 (2026) 214453}}
+\newcommand{\RefVella}{\href{https://doi.org/10.3389/fmedt.2024.1388207}
+  {Vellaparambil等，Front. Med. Technol. 6 (2024) 1388207}}
+\newcommand{\RefWang}{\href{https://doi.org/10.1016/j.eng.2020.02.013}
+  {Wang等，Engineering 7 (2021) 979--990}}
+\newcommand{\RefYasmin}{\href{https://doi.org/10.3390/mi17060736}
+  {Yasmin等，Micromachines 17 (2026) 736}}
+\newcommand{\RefXuPrior}{\href{https://doi.org/10.1016/j.cma.2025.118243}
+  {Xu等，CMAME 446 (2025) 118243}}
+\newcommand{\RefFerro}{\href{https://doi.org/10.1016/j.finel.2024.104304}
+  {Ferro等，Finite Elem. Anal. Des. 244 (2025) 104304}}
+
+% Editable engineering schematics, distinct from experimental or FE results.
+\newcommand{\MeshTube}[5]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \draw[#5,line width=1.5pt] (0,0) rectangle (#3,#4);
+    \foreach \f in {.16,.32,.48,.64,.80} {
+      \draw[#5,line width=.7pt] ({#3*\f},0)--({#3*\f},#4);}
+    \foreach \f in {.25,.5,.75} {
+      \draw[#5,line width=.7pt] (0,{#4*\f})--(#3,{#4*\f});}
+  \end{scope}}
+
+\newcommand{\AntiCellSketch}[3]{%
+  \begin{scope}[shift={(#1,#2)},scale=#3]
+    \foreach \x/\y in {0/0,90/0,0/90,90/90}{
+      \draw[BICNavy,line width=5pt] (\x,\y) circle[radius=19pt];}
+    \draw[BICNavy,line width=5pt]
+      (0,19)--(90,19) (0,71)--(90,71)
+      (19,0)--(19,90) (71,0)--(71,90);
+    \draw[-{Latex[length=7pt]},BICDeepRed,line width=1.7pt]
+      (25,0) arc[start angle=0,end angle=240,radius=25pt];
+    \draw[-{Latex[length=7pt]},BICDeepRed,line width=1.7pt]
+      (115,0) arc[start angle=0,end angle=-240,radius=25pt];
+    \draw[-{Latex[length=7pt]},BICDeepRed,line width=1.7pt]
+      (25,90) arc[start angle=0,end angle=-240,radius=25pt];
+    \draw[-{Latex[length=7pt]},BICDeepRed,line width=1.7pt]
+      (115,90) arc[start angle=0,end angle=240,radius=25pt];
+  \end{scope}}

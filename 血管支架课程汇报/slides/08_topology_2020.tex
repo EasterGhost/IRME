@@ -1,0 +1,19 @@
+% !TeX root = ../main.tex
+\begin{frame}{逆向设计与性能表征}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{逆向设计由目标性能寻找构型；均匀化表征则连接单胞与器件指标，为快速筛选和多目标优化提供依据。}
+    \PicAt{55}{164}{438}{166}{assets/carbonaro2024_workflow.png}
+    \CaptionAt{55}{342}{438}{Carbonaro等：几何／材料到器件性能的映射}
+    \PointAt{55}{383}{440}{等效刚度张量 $\boldsymbol{C}^{\mathrm H}$}
+    \BodyAt{55}{423}{440}{$\longrightarrow\quad f,\ K_R,\ K_A,\ K_T$}
+    \PointAt{545}{153}{357}{Clausen等，2015}
+    \DetailAt{545}{191}{357}{有限变形拓扑优化；泊松比\\$-0.8$至$0.8$，应变达20\%以上。}
+    \PointAt{545}{264}{357}{Xue等，2020}
+    \DetailAt{545}{302}{357}{负泊松比与宏观刚度共同优化；\\成管分析及放大15倍的聚合物原型。}
+    \PointAt{545}{375}{357}{Carbonaro等，2024}
+    \DetailAt{545}{413}{357}{线弹性薄壁圆管解析映射；\\以3类单胞的器件有限元核对。}
+    \Sources{\RefClausen；\RefXueA。\\\RefCarbonaro，图1。$f$为短缩率，$K_R,K_A,K_T$为径向、轴向及扭转刚度。}
+  \end{SlideCanvas}
+  \BICConclusionBand{单胞性能可连接器件指标，\BICBandEmph{有限变形与有限尺寸}仍需进一步检验}
+  \note{Clausen等2015年已实现有限应变范围内预设常数泊松比的拓扑优化与打印验证，因此“可编程”包括零值、正值和负值，不能只理解为随应变变号。Xue等2020年已共同考虑auxetic behavior和宏观刚度，其15倍原型使用30\% Vero、70\% Tango。Carbonaro等2024年通过单胞均匀化与线弹性薄壁圆管理论，推导短缩率及三类刚度与等效刚度张量的关系，并以三类仿股动脉支架验证；少量单胞重复会引入误差，弯曲及大变形不在该解析模型的适用范围。该工作提供性能映射的依据，而不能直接替代几何非线性部署计算。左图保留原文图1，字母符号按原图；正文统一以C^H泛指等效刚度张量。}
+\end{frame}

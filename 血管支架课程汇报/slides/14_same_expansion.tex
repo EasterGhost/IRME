@@ -1,0 +1,16 @@
+% !TeX root = ../main.tex
+\begin{frame}{03 创新思路——管状结构力学响应}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{课题组管状算例在相同轴向位移路径下，呈现相近的径向扩张与不同的轴向拉力曲线。}
+    \PointAt{55}{156}{245}{代表构型}
+    \PointAt{343}{156}{260}{轴向拉伸力}
+    \PointAt{639}{156}{270}{扩张半径}
+    \PicAt{55}{202}{246}{239}{assets/group12_geometry.pdf}
+    \PicAt{342}{202}{263}{239}{assets/group12_force.pdf}
+    \PicAt{638}{202}{264}{239}{assets/group12_radius.pdf}
+    \DetailAt{55}{449}{850}{横轴均为轴向位移$u_z$；右图的半径来自轴向拉伸引起的周向扩张。}
+    \Sources{本课题组成果：\RefGroup，图12(a)(e)(f)。图中曲线对应多个设计，左图为一个代表性设计。}
+  \end{SlideCanvas}
+  \BICConclusionBand{扩张近似保持时，\BICBandEmph{轴向载荷响应可以调整}}
+  \note{图12展示相同目标负泊松比、不同非线性响应设计所形成的反手性管。原始半径20mm、高度125mm、厚度1mm，顶部施加37mm轴向位移。图中的Force为轴向拉伸反力，不是径向支撑力。后期扩张曲线存在一定分散，与大变形中的泊松比偏离有关，故使用“相近”而非完全相同。}
+\end{frame}

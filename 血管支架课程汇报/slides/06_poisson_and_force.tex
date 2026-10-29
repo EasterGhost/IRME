@@ -1,0 +1,30 @@
+% !TeX root = ../main.tex
+\begin{frame}{01 研究背景——长度控制的力学机制}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{泊松比描述周向扩张引起的轴向长度变化，径向承载还需结合等效刚度评价。}
+    \PointAt{55}{148}{405}{长度变化的泊松比表征}
+    \BodyAt{55}{194}{405}{$\displaystyle
+      \varepsilon_\theta=\frac{D-D_0}{D_0},\quad
+      \varepsilon_z=\frac{L-L_0}{L_0}$\\[14pt]
+      $\displaystyle \nu_{\theta z}^{\rm sec}=-\frac{\varepsilon_z}{\varepsilon_\theta}$}
+    \DetailAt{55}{321}{405}{$\nu_{\theta z}>0$：轴向缩短\\[7pt]
+      $\nu_{\theta z}\approx0$：长度近似保持\\[7pt]
+      $\nu_{\theta z}<0$：轴向伸长}
+    \draw[BICPageGray,line width=1pt] (483,151)--(483,432);
+    \PointAt{530}{148}{370}{承载响应的刚度表征}
+    \CaptionAt{530}{188}{370}{正交各向异性面内线性表征}
+    \BodyAt{530}{224}{370}{$\displaystyle
+      \begin{bmatrix}\sigma_\theta\\\sigma_z\end{bmatrix}
+      =\begin{bmatrix}C_{\theta\theta}&C_{\theta z}\\C_{\theta z}&C_{zz}\end{bmatrix}
+      \begin{bmatrix}\varepsilon_\theta\\\varepsilon_z\end{bmatrix}$}
+    \DetailAt{530}{306}{370}{轴向自由（$\sigma_z=0$）时：}
+    \BodyAt{530}{348}{370}{$\displaystyle
+      \nu_{\theta z}=\frac{C_{\theta z}}{C_{zz}},\qquad
+      \overline C_\theta=C_{\theta\theta}-\frac{C_{\theta z}^{\,2}}{C_{zz}}$}
+    \DetailAt{530}{413}{370}{$\overline C_\theta$表征轴向自由时的周向承载刚度。}
+    \NoteAt{55}{457}{850}{线性关系用于机制说明。有限变形评价应统一加载方向、参考状态与应变定义。}
+    \Sources{等效刚度与器件性能映射：\RefCarbonaro；有限变形联合设计：\RefGroup。}
+  \end{SlideCanvas}
+  \BICConclusionBand{泊松比描述变形耦合，\BICBandEmph{承载响应还取决于等效刚度}}
+  \note{本页承接第6页的全过程长度目标，解释变形耦合和承载表征。右侧为正交各向异性、小变形、平面应力的膜内线性关系，用于解释近零耦合与承载为什么需要共同设计；C为对应周向和轴向分量的等效刚度。由轴向自由条件得轴向应变及等效周向刚度，两者均由刚度分量组合决定，同时受正定性和结构可实现性约束。不能将该线性关系直接用于大变形部署的定量预测。左侧保留圆管割线定义，大变形时直接记录L(D)和规定加载路径上的径向力。右侧表达与Carbonaro2024的线弹性薄壁圆管表征相联系，具体径向刚度还含宏观几何因子。}
+\end{frame}

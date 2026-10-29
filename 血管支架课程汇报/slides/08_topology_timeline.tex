@@ -1,0 +1,17 @@
+% !TeX root = ../main.tex
+\begin{frame}{拓扑优化与性能映射}
+  \begin{SlideCanvas}
+    \LiteratureTimeAxis
+    \LiteratureTimeNode{255}{2020}
+    \LiteratureTimeNode{705}{2024}
+    \PointAt{55}{153}{400}{Xue等：多尺度拓扑优化}
+    \PointAt{505}{153}{400}{Carbonaro等：均匀化表征}
+    \CenteredPicAt{255}{278}{390}{188}{assets/xue2020_prototype.pdf}
+    \CenteredPicAt{705}{278}{390}{188}{assets/carbonaro2024_workflow.png}
+    \DetailAt{55}{386}{400}{共同设计负泊松比与宏观刚度，开展成管仿真和15倍聚合物原型验证。}
+    \DetailAt{505}{386}{400}{由单胞等效刚度估计短缩率及径向、轴向和扭转刚度，并用3类构型的有限元核对。}
+    \Sources{\RefXueA，图15；\RefCarbonaro，图1。\\Xue原型放大15倍；Carbonaro采用线弹性薄壁圆管表征。年份按卷期，节点间距示意。}
+  \end{SlideCanvas}
+  \BICConclusionBand{拓扑优化与均匀化表征连接了\BICBandEmph{单胞设计与器件性能}}
+  \note{Xue2020共同考虑负泊松比与宏观刚度，图15保留打印过程与完整原型两个面板。原型放大15倍，采用30\% Vero、70\% Tango混合材料，只说明相应机制与制造可行性。Carbonaro2024图1展示输入几何与材料、均匀化及薄壁圆管理论、输出短缩和三类刚度的流程。其模型依赖线弹性、平面应力、周期重复和近似轴对称假设，不能直接替代大变形部署计算。Clausen2015仍在课题组方法脉络中介绍，18篇文献记录保持完整。}
+\end{frame}

@@ -1,0 +1,19 @@
+% !TeX root = ../main.tex
+\begin{frame}{制造与实验}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{实验研究覆盖聚合物原型、钛合金打印和实际尺度金属切割；材料、尺寸与测试方法决定了结果的适用范围。}
+    \PicAt{55}{161}{421}{136}{assets/vellaparambil2024_bending.png}
+    \CaptionAt{55}{312}{421}{Vellaparambil等：三点弯曲试验与对应模型}
+    \PointAt{55}{354}{421}{制造后的几何反馈}
+    \DetailAt{55}{393}{421}{6类Ti-6Al-4V构型，$L=82$mm、$D=16$mm。\\4类构型平均杆厚偏差约$\pm5\%$，\\以实测厚度修正有限元模型。}
+    \PointAt{530}{153}{370}{Vellaparambil等，2024}
+    \DetailAt{530}{191}{370}{每类3个试样；弯曲曲线$R^2>0.98$。\\最大挠度处刚度误差约14\%。}
+    \PointAt{530}{264}{370}{Hasanzadeh等，2025}
+    \DetailAt{530}{302}{370}{打印混合构型；最优方案报告\\短缩3.27\%、回弹2.43\%、狗骨5.77\%。}
+    \PointAt{530}{359}{370}{Gupta等，2026}
+    \DetailAt{530}{397}{370}{飞秒切割与抛光；重入式／Xience：\\径向强度3.22／1.26N/mm，\\短缩率$-9.44\%$／$+2.49\%$。}
+    \Sources{\RefVella，图3、表3--5；\href{https://doi.org/10.1016/j.actbio.2025.06.043}{Hasanzadeh等，2025}、\href{https://doi.org/10.1016/j.tws.2025.114309}{Gupta等，2026}的指标取自公开摘要。各研究测试条件不同。}
+  \end{SlideCanvas}
+  \BICConclusionBand{制造偏差影响力学预测，\BICBandEmph{单项台架验证}还需衔接完整部署评价}
+  \note{Vellaparambil等使用DMLS Ti64，4类auxetic与2类conventional构型，每类3个试样。设计杆厚0.4mm；RE和Chiral平均0.42mm，CRE和DIA为0.38mm；以实测厚度更新有限元。全部曲线R^2超过0.98，最大挠度10mm处弯曲刚度最大相对误差为CRE的14.47\%，正文概述为14\%。直径16mm、长82mm的钛合金原型验证三点弯曲，不是冠脉部署或疲劳验证。Hasanzadeh的数值来自摘要，其公开图示为放大聚合物原型。Gupta的径向强度3.22对1.26N/mm来自同研究比较，短缩率-9.44\%表示伸长，不应与其他研究绝对值横向排名。图为原文图3，裁剪去除外框图注，保留装置、边界和尺寸。}
+\end{frame}

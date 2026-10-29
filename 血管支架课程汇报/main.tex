@@ -1,0 +1,46 @@
+% !TeX program = xelatex
+% Compile three times with XeLaTeX to resolve remembered overlay positions.
+\RequirePackage{fix-cm}
+\documentclass[aspectratio=169,10pt,t]{beamer}
+\usetheme{MPointBIC}
+\usetikzlibrary{arrows.meta,calc,patterns}
+\usepackage{booktabs,array,tabularx,multicol}
+\setbeameroption{hide notes}
+\hypersetup{
+  pdftitle={血管支架的可编程超材料设计 研究进展与思考},
+  pdfauthor={李牧琛、康鹤群、王思霖、臧笛名、吴莹钧、刘诗扬},
+  pdfsubject={医工交叉研究前沿进展博士课程汇报},
+  colorlinks=true,urlcolor=BICAccentBlue
+}
+\input{layout.tex}
+
+\begin{document}
+% Review themes: stent configurations / topology inverse design / device validation.
+\input{slides/01_cover.tex}
+\input{slides/00_outline.tex}
+\input{slides/02_clinical_need.tex}
+\input{slides/03_failure_mechanisms.tex}
+\input{slides/04_design_targets.tex}
+\input{slides/05_length_control.tex}
+\input{slides/06_poisson_and_force.tex}
+\input{slides/07_configurations_midaxis.tex}
+\input{slides/08_topology_midaxis.tex}
+\input{slides/10_validation_midaxis.tex}
+\input{slides/11_research_gaps.tex}
+\input{slides/12_group_framework.tex}
+\input{slides/13_group_cell.tex}
+\input{slides/14_same_expansion.tex}
+\input{slides/15_same_force.tex}
+\input{slides/16_application_gap.tex}
+\input{slides/17_hypothesis.tex}
+\input{slides/18_comparison.tex}
+\input{slides/20_challenges.tex}
+\input{slides/21_conclusions.tex}
+\input{slides/22_closing.tex}
+\input{slides/appendix_review_li_muchen.tex}
+\input{slides/appendix_review_kang_hequn.tex}
+\input{slides/appendix_review_wang_silin.tex}
+\input{slides/appendix_review_zang_diming.tex}
+\input{slides/appendix_review_wu_yingjun.tex}
+\input{slides/appendix_review_liu_shiyang.tex}
+\end{document}

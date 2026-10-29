@@ -1,0 +1,16 @@
+% !TeX root = ../main.tex
+\begin{frame}{03 创新思路——课题组成果：联合可编程设计}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{本课题组提出有限变形拓扑优化方法，联合编程泊松比与非线性力学响应。}
+    \CaptionAt{55}{121}{850}{Jiashuo Xu, \textcolor{BICDeepRed}{Hequn Kang（康鹤群）}, Liang Gao, Mi Xiao$^\ast$\quad $^\ast$通讯作者}
+    \PicAt{55}{152}{555}{309}{assets/group_framework.pdf}
+    \PointAt{648}{160}{253}{目标应力曲线}
+    \DetailAt{648}{197}{253}{在多个应变状态匹配目标响应。}
+    \PointAt{648}{278}{253}{泊松比与刚度约束}
+    \DetailAt{648}{315}{253}{共同控制变形耦合、切线刚度与等效刚度。}
+    \CaptionAt{648}{401}{253}{方法脉络：\\Clausen 2015：$\nu$\\Xu 2025：$\sigma(\varepsilon)$\\Xu 2026：两类响应联合设计}
+    \Sources{本课题组成果，图2：\RefGroup；相关方法：\RefClausen、\RefXuPrior。$k=\mathrm{d}\sigma/\mathrm{d}\varepsilon$。}
+  \end{SlideCanvas}
+  \BICConclusionBand{方法提供的是\BICBandEmph{几何响应与载荷响应的共同设计能力}}
+  \note{完整课程小组为李牧琛、康鹤群、王思霖、臧笛名、吴莹钧、刘诗扬，其中康鹤群（Hequn Kang）为论文作者，作者列表中以红色突出。Jiashuo Xu为课题组高年级成员，Liang Gao和Mi Xiao为课题组导师；通讯星号沿用论文首页的Mi Xiao标记。论文采用可压缩Neo-Hookean模型、低密度区域应变能插值、周期单胞表征及材料分布拓扑优化。目标函数主要拟合应力响应，并约束泊松比、切线刚度、等效刚度与材料用量。应力与其导数并非互不约束的自由量。doi:10.1016/j.tws.2026.114956。}
+\end{frame}

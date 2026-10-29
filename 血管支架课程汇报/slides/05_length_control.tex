@@ -1,0 +1,29 @@
+% !TeX root = ../main.tex
+\begin{frame}{01 研究背景——全过程长度控制目标}
+  \begin{SlideCanvas}
+    \BodyAt{55}{84}{850}{设计目标是在规定部署路径和直径区间内控制轴向长度偏差，同时关注病变覆盖与端部位置。}
+    \foreach \xc/\lab/\len/\col in {
+      190/{缩短}/178/BICDeepRed,
+      480/{长度保持}/235/BICNavy,
+      770/{伸长}/278/BICDeepRed}{
+      \node[anchor=north,inner sep=0pt,text=\col,font=\usebeamerfont{BIC point}]
+        at (\xc,148) {\lab};
+      \draw[BICPageGray,dashed,line width=1pt] ({\xc-117.5},193)--({\xc-117.5},332);
+      \draw[BICPageGray,dashed,line width=1pt] ({\xc+117.5},193)--({\xc+117.5},332);
+      \draw[BICPageGray,line width=1pt] ({\xc-117.5},204)--({\xc+117.5},204);
+      \node[anchor=south,text=BICNavy,font=\usebeamerfont{caption}]
+        at (\xc,200) {参考长度$L_0$};
+      \MeshTube{\xc-\len/2}{235}{\len}{77}{\col}
+    }
+    \node[anchor=north,text=BICDeepRed,font=\usebeamerfont{BIC point}] at (190,342) {$\Delta L<0$};
+    \node[anchor=north,text=BICNavy,font=\usebeamerfont{BIC point}] at (480,342) {$\Delta L\approx0$};
+    \node[anchor=north,text=BICDeepRed,font=\usebeamerfont{BIC point}] at (770,342) {$\Delta L>0$};
+    \DetailAt{69}{389}{245}{关注覆盖不足及端部位置偏移}
+    \DetailAt{357}{389}{245}{限制目标区间内的长度偏差}
+    \DetailAt{647}{389}{245}{评价伸长幅度及其发生阶段}
+    \CaptionAt{55}{441}{850}{文献实例：直径1.68增至2.78mm时，长度18.01增至18.31mm。}
+    \Sources{图为几何示意，非计算结果。实测实例：\RefAmin，表IV。长度耦合研究：\RefRuan。}
+  \end{SlideCanvas}
+  \BICConclusionBand{长度控制需同时评价\BICBandEmph{有符号变化、绝对偏差与端部位置}}
+  \note{本页将结构设计目标聚焦于全过程长度控制，并衔接下一页的力学机制。本图仅比较相同展开直径下不同轴向长度的几何情形，不代表特定构型的仿真结果。使用有符号长度变化可以区分缩短与伸长，使用绝对偏差可以比较稳定性。文献中的负短缩率不能直接解释为长度完全保持。实际端部位置还受植入位置、血管约束和刚体运动影响。}
+\end{frame}
